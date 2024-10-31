@@ -14,8 +14,11 @@ const multerConfig = require("../Middleware/multerMiddleware")
 router.post('/user/register', userController.register)
 router.post('/user/login', userController.login)
 router.post('/project/addproject', jwtMiddleware, multerConfig.single('projectImage'), projectController.addProject)
-
-
+router.get('/project/homeproject',projectController.getHomeProject);
+router.get('/project/allproject',jwtMiddleware,projectController.getAllProject);
+router.get('/project/userproject',jwtMiddleware,projectController.getUserProject);
+router.put('/project/editproject/:id',jwtMiddleware,multerConfig.single('projectImage'),projectController.editUserProject)
+router.delete('/project/delete/:id',jwtMiddleware,projectController.deleteUserProject)
 
 //export router
 module.exports = router

@@ -74,6 +74,4 @@ exports.login = async (req, res) => {
 }
 
 
-exports.getuserDetails = (req, res) => {
-    res.status(200).json('Inside get user details controller')
-}
+

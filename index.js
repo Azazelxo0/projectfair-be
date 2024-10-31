@@ -20,7 +20,12 @@ pfServer.use(cors())
 
 //use middleware to convert JSON data to js object 
 pfServer.use(express.json())
+
+
 pfServer.use(router)
+
+//pfserver should expose the upload folder
+pfServer.use('/uploads',express.static('./uploads'))
 
 //provide port 
 
